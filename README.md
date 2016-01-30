@@ -27,7 +27,7 @@ Somit ist der Port immer auf *high* und geht in den Status *low* wenn der Taster
 
 >    chmod +x shutdown_script.py
 
-- GPIO Port *24* mit der richtigen Port Nummer an 2 Stellen im Skript ersetzen.
+- GPIO Port *24* mit der richtigen Port Nummer Skript unter *#config* ersetzen.
 
 >    #config
 
