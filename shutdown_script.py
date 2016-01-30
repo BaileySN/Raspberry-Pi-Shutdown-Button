@@ -5,18 +5,26 @@ import RPi.GPIO as GPIO
 import time
 import os
 
+#config
+#change the GPIO Port number
+gpioport=24
+
+sdate = time.strftime("%H:%M:%S")
+stime = time.strftime("%Y-%m-%d")
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(24, GPIO.IN)
+GPIO.setup(gpioport, GPIO.IN)
 
 def sysshutdown(channel):
-	msg = "System shutdown GPIO.Low"
+	msg="System shutdown GPIO.Low state"
+	logpath="/var/log/shutdown.log"
 	print("System shutdown")
-	os.system("date >>/var/log/shutdown.log")
-	os.system("echo "+msg+" >>/var/log/shutdown.log")
+	f = open(logpath, "a")
+	f.write(str(sdate)+";"+str(stime)+";"+str(msg)+";")
+	f.close()
 	os.system("shutdown -h now")
 
 while True:
-	if(GPIO.input(24)):
+	if(GPIO.input(gpioport)):
 		sysshutdown("1")
 		break
 	time.sleep(2)
