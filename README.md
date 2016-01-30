@@ -12,7 +12,7 @@ Den *3.3V* GPIO Port mit einem Eingang vom Taster verbinden und mit einem *1 kOh
 Mit einem zwischengeschaltetem *10 kOhm Widerstand* vom GPIO Port *24* auf *GND* (Ground bzw. *Minus* *-*).
 Somit ist der Port immer auf *high* und geht in den Status *low* wenn der Taster betätigt wird.
 
-
+![Aufbau](https://raw.githubusercontent.com/BaileySN/Raspberry-Pi-Shutdown-Button/master/gpio-numbers-pi2.png)
 
 ----------
 
