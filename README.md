@@ -10,7 +10,7 @@ Zum Aufbau werden folgende Teile benötigt:
 
 Den *3.3V* GPIO Port mit einem Eingang vom Taster verbinden und mit einem *1 kOhm Widerstand* zum GPIO Port *24*.
 Mit einem zwischengeschaltetem *10 kOhm Widerstand* vom GPIO Port *24* auf *GND* (Ground bzw. *Minus* *-*).
-Somit ist der Port immer auf *high* und geht in den Status *low* wenn der Taster betätigt wird.
+Somit ist der Port immer auf *low* und geht in den Status *high* wenn der Taster betätigt wird.
 
 ![Aufbau](https://raw.githubusercontent.com/BaileySN/Raspberry-Pi-Shutdown-Button/master/gpio-numbers-pi2.png)
 
@@ -40,7 +40,7 @@ Somit ist der Port immer auf *high* und geht in den Status *low* wenn der Taster
 >    python /opt/Raspberry-Pi-Shutdown-Button/shutdown_script.py
 
 Zum Testen einfach den Knopf am Raspberry Pi drücken für ca. 3 Sekunden und der Pi fährt Automatisch runter.
-Das Skript schreibt erstellt einen Log unter */var/log/* eine Datei, wo jedesmal wenn GPIO Port auf *LOW* ist einen eintrag macht (inkl. Datum).
+Das Skript schreibt in eine Logdatei unter */var/log/shutdown.log*, wo jedesmal wenn GPIO Port auf *HIGH* ist einen eintrag macht (inkl. Datum).
 Somit ist es leichter zu erkennen, warum der Pi aus ist.
 
 ## Autostart ##
